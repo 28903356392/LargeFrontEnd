@@ -12,6 +12,7 @@ node_modules
 dist
 dist-ssr
 coverage
+
 *.local
 
 /cypress/videos/
@@ -28,3 +29,5 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+*.d.ts

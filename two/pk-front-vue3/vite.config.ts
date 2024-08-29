@@ -21,10 +21,21 @@ import AutoComponents from 'unplugin-vue-components/vite'
 //解析饿了么方法组件并引入
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+// 图标库
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 1001
+  },
   plugins: [
     VueRouter(),
+    /** 控制路由存放文件
+     * {dirs:"src/vite"}
+     * */
+    // VitePages()
     vue(),
     vueJsx(),
     vueDevTools(),
@@ -43,12 +54,21 @@ export default defineConfig({
     AutoComponents({
       directoryAsNamespace: true,
       directives: true,
-      resolvers: [ElementPlusResolver()]
+      resolvers: [
+        ElementPlusResolver(),
+        /**
+         * 自动引入icon
+         * https://icones.netlify.app/
+         * */
+        IconsResolver({
+          prefix: 'i'
+          // enabledCollections: ['eq'] //不可更改，暂时无方法，可百度
+        })
+      ]
+    }),
+    Icons({
+      autoInstall: true
     })
-    /** 控制路由存放文件
-     * {dirs:"src/vite"}
-     * */
-    // VitePages()
   ],
   resolve: {
     alias: {
