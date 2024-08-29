@@ -1,12 +1,4 @@
 <script setup lang="ts">
-import {
-  onBeforeMount,
-  onBeforeUnmount,
-  onBeforeUpdate,
-  onMounted,
-  onUnmounted,
-  onUpdated
-} from 'vue'
 
 onBeforeMount(() => {
   console.log('挂载前')
@@ -31,6 +23,7 @@ console.log('创建')
 
 <template>
   <p>index</p>
+  <HelloWorld></HelloWorld>
 </template>
 
 <style lang="scss" scoped>

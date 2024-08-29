@@ -2,7 +2,7 @@
 
 npm init vite@latest pk-front-vue3
 
-![alt text](image.png)
+![alt text](./src/assets/image.png)
 
 # 安装依赖 运行项目
 
@@ -39,9 +39,9 @@ npm-check-updates
 // git平台bot
 ```
 
-![alt text](image-1.png)
+![alt text](./src/assets/image-1.png)
 
-![alt text](image-2.png)
+![alt text](./src/assets/image-2.png)
 
 # 基于文件系统自动生成路由
 
@@ -58,4 +58,15 @@ pnpm i -D unplugin-vue-router
 ```js
 //
 vite - plugin - vue - layouts
+```
+
+# 自动引入
+
+```js
+// 自动引入方法
+pnpm i -D unplugin-auto-import
+// 自动引入组件
+pnpm i -D unplugin-vue-components
+// 自动引入样式
+pnpm i -D vite-plugin-style-import
 ```
