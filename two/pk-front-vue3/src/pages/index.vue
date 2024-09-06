@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const msg = ref("msg")
 
 onBeforeMount(() => {
   console.log('挂载前')
@@ -23,7 +24,7 @@ console.log('创建')
 
 <template>
   <p>index</p>
-  <HelloWorld></HelloWorld>
+  <HelloWorld :msg="msg"></HelloWorld>
 </template>
 
 <style lang="scss" scoped>

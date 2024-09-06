@@ -21,9 +21,18 @@ import AutoComponents from 'unplugin-vue-components/vite'
 //解析饿了么方法组件并引入
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+// 自动引入路由解决层级过深问题
+import Layouts from 'vite-plugin-vue-layouts'
+
 // 图标库
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+
+// 集成PWA
+// import VitePwa from 'vite-plugin-pwa'
+
+// Mock模拟数据
+import { viteMockServe } from 'vite-plugin-mock'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -68,6 +77,17 @@ export default defineConfig({
     }),
     Icons({
       autoInstall: true
+    }),
+    // 自动路由
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'default'
+    }),
+    viteMockServe({
+      mockPath: 'mock',
+      enable: true,
+      watchFiles: true,
+      logger: true
     })
   ],
   resolve: {
